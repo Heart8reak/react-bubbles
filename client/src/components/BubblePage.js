@@ -11,12 +11,12 @@ const BubblePage = (props) => {
   useEffect(() => {
     localStorage.getItem('token') &&
       axiosWithAuth()
-        .get('.colors')
+        .get('colors')
         .then(response => {
           setColorList(response.data)
         })
         .catch(error => console.log(error))
-  })
+  }, [])
 
   return (
     <>
